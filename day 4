@@ -65,3 +65,42 @@ int main()
     t=readelement(t);
     output(t);
 }
+*******************************************************************************************************************************************
+#include <stdio.h>
+#include<math.h>
+struct square{
+    int b;
+    float total;
+    float temp;
+};
+struct square input()
+{
+    struct square i;
+    printf("enter the number of elemnts");
+    scanf("%d",&i.b);
+    return i;
+}
+struct square compute( struct square i)
+{
+    i.total=0;
+    for(int c=0;c<=i.b;c++)
+    {
+        i.temp=sqrt(c);
+        i.total=i.total+i.temp;
+    }
+    return i;
+}
+struct square output( struct square i)
+{
+   printf("the sum of the square roots is %f",i.total);
+}
+int main()
+{
+    struct square s;
+    s=input();
+    s=compute(s);
+    output(s);
+}
+*********************************************************************************************************************************************    
+
+
