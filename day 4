@@ -31,6 +31,7 @@ int main()
     s=input();
     s=compute(s);
     output(s);
+    return 0;
  }
  *****************************************************************************************************************************************
  #include<stdio.h>
@@ -64,6 +65,7 @@ int main()
     t=input();
     t=readelement(t);
     output(t);
+    return 0;
 }
 *******************************************************************************************************************************************
 #include <stdio.h>
@@ -100,6 +102,7 @@ int main()
     s=input();
     s=compute(s);
     output(s);
+    return 0;
 }
 *********************************************************************************************************************************************    
 #include<stdio.h>
@@ -143,5 +146,56 @@ int main()
     s=input();
     s=compute(s);
     output(s);
+    return 0;
 }
 *******************************************************************************************************************************************
+#include <stdio.h>
+struct sequence{
+    int n;
+    int a[100];
+    int small;
+    int smallest;
+};
+
+struct sequence input()
+{
+    struct sequence i;
+    printf("enter the number of elements");
+    scanf("%d",&i.n);
+    printf("enter the elements");
+    for(int c=0;c<i.n;c++)
+    {
+        scanf("%d",&i.a[c]);
+    }
+    return i;
+}
+struct sequence compute(struct sequence i)
+{
+    
+   i.small=i.a[0];
+   i.smallest=i.a[1];
+    for(int c=0;c<i.n;c++)
+   {
+       if(i.small>i.a[c])
+     {
+       i.smallest=i.small;
+       i.small=i.a[c];
+     }
+      if(i.smallest>i.a[c]&&i.a[c]!=i.small)
+        i.smallest=i.a[c];
+   }
+   return i;
+}
+void output(struct sequence i)
+{
+    printf("the smallest number is %d",i.small);
+    printf("\nthe second smallest number is %d",i.smallest);
+}
+int main()
+{
+    struct sequence s;
+    s=input();
+    s=compute(s);
+    output(s);
+    return 0;
+}
